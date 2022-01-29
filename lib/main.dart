@@ -9,6 +9,7 @@ import '../flutter_flow/flutter_flow_theme.dart';
 import 'package:test4/login_page/login_page_widget.dart';
 import 'flutter_flow/flutter_flow_theme.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:floating_bottom_navigation_bar/floating_bottom_navigation_bar.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'userpage/userpage_widget.dart';
 import 'my_appointments/my_appointments_widget.dart';
@@ -115,79 +116,170 @@ class _NavBarPageState extends State<NavBarPage> {
     final currentIndex = tabs.keys.toList().indexOf(_currentPage);
     return Scaffold(
       body: tabs[_currentPage],
-      bottomNavigationBar: BottomNavigationBar(
+      extendBody: true,
+      bottomNavigationBar: FloatingNavbar(
         currentIndex: currentIndex,
         onTap: (i) => setState(() => _currentPage = tabs.keys.toList()[i]),
         backgroundColor: FlutterFlowTheme.darkBackground,
         selectedItemColor: Colors.white,
         unselectedItemColor: FlutterFlowTheme.grayLight,
-        showSelectedLabels: true,
-        showUnselectedLabels: false,
-        type: BottomNavigationBarType.fixed,
-        items: const <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
-            icon: Icon(
-              Icons.home_outlined,
-              size: 24,
+        selectedBackgroundColor: Color(0x00000000),
+        borderRadius: 8,
+        itemBorderRadius: 8,
+        margin: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
+        padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
+        width: double.infinity,
+        elevation: 0,
+        items: [
+          FloatingNavbarItem(
+            customWidget: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Icon(
+                  currentIndex == 0 ? Icons.home_rounded : Icons.home_outlined,
+                  color: currentIndex == 0
+                      ? Colors.white
+                      : FlutterFlowTheme.grayLight,
+                  size: 24,
+                ),
+                Text(
+                  ' Home',
+                  overflow: TextOverflow.ellipsis,
+                  style: TextStyle(
+                    color: currentIndex == 0
+                        ? Colors.white
+                        : FlutterFlowTheme.grayLight,
+                    fontSize: 11.0,
+                  ),
+                ),
+              ],
             ),
-            activeIcon: Icon(
-              Icons.home_rounded,
-              size: 24,
-            ),
-            label: ' Home',
-            tooltip: '',
           ),
-          BottomNavigationBarItem(
-            icon: Icon(
-              Icons.date_range_outlined,
-              size: 24,
+          FloatingNavbarItem(
+            customWidget: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Icon(
+                  currentIndex == 1
+                      ? Icons.date_range_rounded
+                      : Icons.date_range_outlined,
+                  color: currentIndex == 1
+                      ? Colors.white
+                      : FlutterFlowTheme.grayLight,
+                  size: 24,
+                ),
+                Text(
+                  'Appointments',
+                  overflow: TextOverflow.ellipsis,
+                  style: TextStyle(
+                    color: currentIndex == 1
+                        ? Colors.white
+                        : FlutterFlowTheme.grayLight,
+                    fontSize: 11.0,
+                  ),
+                ),
+              ],
             ),
-            activeIcon: Icon(
-              Icons.date_range_rounded,
-              size: 24,
-            ),
-            label: 'Appointments',
-            tooltip: '',
           ),
-          BottomNavigationBarItem(
-            icon: Icon(
-              Icons.favorite_border_rounded,
-              size: 24,
+          FloatingNavbarItem(
+            customWidget: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Icon(
+                  currentIndex == 2
+                      ? Icons.favorite_rounded
+                      : Icons.favorite_border_rounded,
+                  color: currentIndex == 2
+                      ? Colors.white
+                      : FlutterFlowTheme.grayLight,
+                  size: 24,
+                ),
+                Text(
+                  'Symptoms',
+                  overflow: TextOverflow.ellipsis,
+                  style: TextStyle(
+                    color: currentIndex == 2
+                        ? Colors.white
+                        : FlutterFlowTheme.grayLight,
+                    fontSize: 11.0,
+                  ),
+                ),
+              ],
             ),
-            activeIcon: Icon(
-              Icons.favorite_rounded,
-              size: 24,
-            ),
-            label: 'Symptoms',
-            tooltip: '',
           ),
-          BottomNavigationBarItem(
-            icon: Icon(
-              Icons.account_circle_outlined,
-              size: 24,
+          FloatingNavbarItem(
+            customWidget: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Icon(
+                  currentIndex == 3
+                      ? Icons.account_circle_rounded
+                      : Icons.account_circle_outlined,
+                  color: currentIndex == 3
+                      ? Colors.white
+                      : FlutterFlowTheme.grayLight,
+                  size: 24,
+                ),
+                Text(
+                  'Profile',
+                  overflow: TextOverflow.ellipsis,
+                  style: TextStyle(
+                    color: currentIndex == 3
+                        ? Colors.white
+                        : FlutterFlowTheme.grayLight,
+                    fontSize: 11.0,
+                  ),
+                ),
+              ],
             ),
-            activeIcon: Icon(
-              Icons.account_circle_rounded,
-              size: 24,
-            ),
-            label: 'Profile',
-            tooltip: '',
           ),
-          BottomNavigationBarItem(
-            icon: Icon(
-              Icons.account_balance_outlined,
-              size: 24,
+          FloatingNavbarItem(
+            customWidget: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Icon(
+                  Icons.account_balance_outlined,
+                  color: currentIndex == 4
+                      ? Colors.white
+                      : FlutterFlowTheme.grayLight,
+                  size: 24,
+                ),
+                Text(
+                  'Home',
+                  overflow: TextOverflow.ellipsis,
+                  style: TextStyle(
+                    color: currentIndex == 4
+                        ? Colors.white
+                        : FlutterFlowTheme.grayLight,
+                    fontSize: 11.0,
+                  ),
+                ),
+              ],
             ),
-            label: 'Home',
-            tooltip: '',
           ),
-          BottomNavigationBarItem(
-            icon: Icon(
-              Icons.design_services,
-              size: 24,
+          FloatingNavbarItem(
+            customWidget: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Icon(
+                  Icons.design_services,
+                  color: currentIndex == 5
+                      ? Colors.white
+                      : FlutterFlowTheme.grayLight,
+                  size: 24,
+                ),
+                Text(
+                  'Home',
+                  overflow: TextOverflow.ellipsis,
+                  style: TextStyle(
+                    color: currentIndex == 5
+                        ? Colors.white
+                        : FlutterFlowTheme.grayLight,
+                    fontSize: 11.0,
+                  ),
+                ),
+              ],
             ),
-            label: 'Home',
-            tooltip: '',
           )
         ],
       ),

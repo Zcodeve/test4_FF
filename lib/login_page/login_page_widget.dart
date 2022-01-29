@@ -229,8 +229,8 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                                               8),
                                                     ),
                                                     filled: true,
-                                                    fillColor: FlutterFlowTheme
-                                                        .darkBackground,
+                                                    fillColor:
+                                                        Color(0xFF111417),
                                                     contentPadding:
                                                         EdgeInsetsDirectional
                                                             .fromSTEB(
